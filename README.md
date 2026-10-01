@@ -15,7 +15,7 @@ Sem build: HTML, CSS e JS puros.
 
 ## Antes de publicar
 
-- **WhatsApp**: preencha `WHATSAPP` no topo do `script.js` (ex.: `5551999999999`). Enquanto estiver vazio, os botões levam para a seção de localização e o botão flutuante fica oculto.
+- **WhatsApp**: `(51) 9631-2103`, definido em `WHATSAPP` no topo do `script.js`. Todos os botões, o botão flutuante e o formulário de contato usam esse número.
 - **Depoimentos** são exemplos. Substitua por avaliações reais de clientes.
 - **Horário de funcionamento** e **logo**: não informados. Adicione quando tiver.
 - Endereço: Rua Casemiro de Abreu, 707 - Rio Branco, Porto Alegre - RS, CEP 90420-001 (confirmado pelo Google Maps).

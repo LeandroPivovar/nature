@@ -1,7 +1,7 @@
 (function () {
   // Número do WhatsApp com DDI e DDD, só dígitos (ex.: "5551999999999").
-  // Enquanto estiver vazio, os botões levam para a seção de localização.
-  var WHATSAPP = "";
+  // Enquanto estiver vazio, os botões levam para o formulário de contato.
+  var WHATSAPP = "555196312103";
   var MENSAGEM = "Olá! Vim pelo site e gostaria de um orçamento de paisagismo.";
 
   if (WHATSAPP) {
@@ -20,6 +20,54 @@
       line.hidden = false;
     }
   }
+
+  // Formulário de contato: monta a mensagem e abre no WhatsApp
+  var form = document.getElementById("contatoForm");
+  var status = document.getElementById("formStatus");
+  function setError(input, show) {
+    input.classList.toggle("is-invalid", show);
+    input.setAttribute("aria-invalid", String(show));
+    document.getElementById(input.id + "-erro").hidden = !show;
+  }
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    var nome = form.elements.nome;
+    var mensagem = form.elements.mensagem;
+    var nomeVazio = !nome.value.trim();
+    var msgVazia = !mensagem.value.trim();
+    setError(nome, nomeVazio);
+    setError(mensagem, msgVazia);
+    if (nomeVazio || msgVazia) {
+      (nomeVazio ? nome : mensagem).focus();
+      return;
+    }
+    if (!WHATSAPP) {
+      status.textContent = "O WhatsApp da loja ainda não foi configurado. Visite o viveiro na Rua Casemiro de Abreu, 707.";
+      status.hidden = false;
+      return;
+    }
+
+    var linhas = [
+      "Olá! Vim pelo site da Nature Paisagismo.",
+      "",
+      "*Nome:* " + nome.value.trim(),
+      "*Serviço:* " + form.elements.servico.value
+    ];
+    var tel = form.elements.telefone.value.trim();
+    var bairro = form.elements.bairro.value.trim();
+    if (tel) linhas.push("*Telefone:* " + tel);
+    if (bairro) linhas.push("*Bairro:* " + bairro);
+    linhas.push("", mensagem.value.trim());
+
+    window.open("https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(linhas.join("\n")), "_blank", "noopener");
+    status.textContent = "Abrimos o WhatsApp com a sua mensagem. É só tocar em enviar.";
+    status.hidden = false;
+  });
+  ["nome", "mensagem"].forEach(function (name) {
+    form.elements[name].addEventListener("input", function () {
+      if (this.value.trim()) setError(this, false);
+    });
+  });
 
   var nav = document.querySelector(".nav");
   var toggle = document.querySelector(".nav__toggle");

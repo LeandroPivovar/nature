@@ -53,11 +53,12 @@
         <a href="#sobre">Sobre</a>
         <a href="#projetos">Projetos</a>
         <a href="#servicos">Serviços</a>
+        <a href="#contato">Contato</a>
         <a href="#localizacao">Localização</a>
         <a href="#faq">Dúvidas</a>
       </nav>
 
-      <a class="btn btn--solid nav__cta js-wa" href="#localizacao">
+      <a class="btn btn--solid nav__cta js-wa" href="#contato">
         Pedir orçamento <i class="ph ph-arrow-right" aria-hidden="true"></i>
       </a>
 
@@ -70,9 +71,10 @@
       <a href="#sobre">Sobre</a>
       <a href="#projetos">Projetos</a>
       <a href="#servicos">Serviços</a>
+      <a href="#contato">Contato</a>
       <a href="#localizacao">Localização</a>
       <a href="#faq">Dúvidas</a>
-      <a class="btn btn--solid js-wa" href="#localizacao">
+      <a class="btn btn--solid js-wa" href="#contato">
         Pedir orçamento <i class="ph ph-arrow-right" aria-hidden="true"></i>
       </a>
     </div>
@@ -87,7 +89,7 @@
           <h1 id="hero-title" class="hero__title">Jardins feitos para o seu <em>espaço</em>.</h1>
           <p class="hero__lead">Paisagismo, jardinagem e viveiro em Porto Alegre. Do terreno limpo ao jardim pronto para usar.</p>
           <div class="hero__actions">
-            <a class="btn btn--solid btn--lg js-wa" href="#localizacao">
+            <a class="btn btn--solid btn--lg js-wa" href="#contato">
               Pedir orçamento <i class="ph ph-arrow-right" aria-hidden="true"></i>
             </a>
             <a class="btn btn--ghost btn--lg" href="#projetos">Ver projeto</a>
@@ -242,6 +244,63 @@
       </div>
     </section>
 
+    <!-- CONTATO -->
+    <section class="contact" id="contato" aria-labelledby="contato-title">
+      <div class="wrap contact__grid">
+        <div class="contact__copy">
+          <h2 id="contato-title" class="h2 reveal">Conte como é o seu espaço.</h2>
+          <p class="body reveal">Preencha o formulário e a mensagem chega pronta no nosso WhatsApp. Se puder, mande fotos do local na conversa.</p>
+          <ul class="contact__points reveal">
+            <li><i class="ph ph-check-circle" aria-hidden="true"></i>Sem cadastro e sem compromisso</li>
+            <li><i class="ph ph-check-circle" aria-hidden="true"></i>Resposta com os próximos passos e o orçamento</li>
+            <li><i class="ph ph-check-circle" aria-hidden="true"></i>Visita ao local para projetos maiores</li>
+          </ul>
+        </div>
+
+        <form class="form reveal" id="contatoForm" novalidate>
+          <div class="field">
+            <label for="f-nome">Nome</label>
+            <input id="f-nome" name="nome" type="text" autocomplete="name" required aria-describedby="f-nome-erro">
+            <p class="field__error" id="f-nome-erro" hidden>Informe seu nome.</p>
+          </div>
+
+          <div class="field">
+            <label for="f-telefone">Telefone ou WhatsApp <span class="field__opt">(opcional)</span></label>
+            <input id="f-telefone" name="telefone" type="tel" autocomplete="tel" inputmode="tel">
+          </div>
+
+          <div class="field">
+            <label for="f-servico">O que você precisa?</label>
+            <select id="f-servico" name="servico">
+              <option>Projeto de paisagismo</option>
+              <option>Implantação de jardim</option>
+              <option>Manutenção e poda</option>
+              <option>Limpeza de terreno</option>
+              <option>Compra de plantas no viveiro</option>
+              <option>Outro</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="f-bairro">Bairro <span class="field__opt">(opcional)</span></label>
+            <input id="f-bairro" name="bairro" type="text" autocomplete="address-level3">
+          </div>
+
+          <div class="field field--full">
+            <label for="f-mensagem">Mensagem</label>
+            <textarea id="f-mensagem" name="mensagem" rows="4" required aria-describedby="f-mensagem-ajuda f-mensagem-erro"></textarea>
+            <p class="field__help" id="f-mensagem-ajuda">Ex.: quintal de 6 x 10 m, quero grama, um canteiro e um espaço para sentar.</p>
+            <p class="field__error" id="f-mensagem-erro" hidden>Escreva uma mensagem curta sobre o que você precisa.</p>
+          </div>
+
+          <button class="btn btn--solid btn--lg form__submit" type="submit">
+            <i class="ph ph-whatsapp-logo" aria-hidden="true"></i> Enviar pelo WhatsApp
+          </button>
+          <p class="form__status" id="formStatus" role="status" hidden></p>
+        </form>
+      </div>
+    </section>
+
     <!-- LOCALIZAÇÃO -->
     <section class="location" id="localizacao" aria-labelledby="localizacao-title">
       <div class="wrap location__grid">
@@ -318,7 +377,7 @@
     </div>
   </footer>
 
-  <a class="float-chat js-wa" href="#localizacao" aria-label="Fale conosco pelo WhatsApp" hidden>
+  <a class="float-chat js-wa" href="#contato" aria-label="Fale conosco pelo WhatsApp">
     <i class="ph ph-whatsapp-logo" aria-hidden="true"></i><span>WhatsApp</span>
   </a>
 
