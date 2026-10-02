@@ -130,6 +130,34 @@
     });
   });
 
+  // Galeria: foto ampliada com setas, teclado e Esc
+  var box = document.querySelector(".lightbox");
+  var shots = Array.prototype.slice.call(document.querySelectorAll(".shot__btn"));
+  if (box && shots.length && typeof box.showModal === "function") {
+    var boxImg = box.querySelector(".lightbox__img");
+    var boxCap = box.querySelector(".lightbox__caption");
+    var current = 0;
+    var show = function (i) {
+      current = (i + shots.length) % shots.length;
+      var thumb = shots[current].querySelector("img");
+      boxImg.src = shots[current].dataset.full;
+      boxImg.alt = thumb.alt;
+      boxCap.textContent = thumb.alt;
+    };
+    shots.forEach(function (btn, i) {
+      btn.addEventListener("click", function () { show(i); box.showModal(); });
+    });
+    box.querySelector(".lightbox__close").addEventListener("click", function () { box.close(); });
+    box.querySelector(".lightbox__prev").addEventListener("click", function () { show(current - 1); });
+    box.querySelector(".lightbox__next").addEventListener("click", function () { show(current + 1); });
+    box.addEventListener("click", function (e) { if (e.target === box) box.close(); });
+    box.addEventListener("keydown", function (e) {
+      if (e.key === "ArrowLeft") show(current - 1);
+      if (e.key === "ArrowRight") show(current + 1);
+    });
+    box.addEventListener("close", function () { boxImg.removeAttribute("src"); });
+  }
+
   var ano = document.getElementById("ano");
   if (ano) ano.textContent = new Date().getFullYear();
 })();

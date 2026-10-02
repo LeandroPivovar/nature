@@ -45,7 +45,7 @@
   <header class="nav" id="topo">
     <div class="nav__inner">
       <a class="brand" href="#topo" aria-label="Nature Paisagismo, início">
-        <i class="ph-fill ph-leaf brand__icon" aria-hidden="true"></i>
+        <img class="brand__logo" src="assets/logo.png" alt="" width="56" height="56">
         <span class="brand__name">Nature<span>Paisagismo</span></span>
       </a>
 
@@ -53,6 +53,7 @@
         <a href="#sobre">Sobre</a>
         <a href="#projetos">Projetos</a>
         <a href="#servicos">Serviços</a>
+        <a href="#galeria">Galeria</a>
         <a href="#contato">Contato</a>
         <a href="#localizacao">Localização</a>
         <a href="#faq">Dúvidas</a>
@@ -71,6 +72,7 @@
       <a href="#sobre">Sobre</a>
       <a href="#projetos">Projetos</a>
       <a href="#servicos">Serviços</a>
+      <a href="#galeria">Galeria</a>
       <a href="#contato">Contato</a>
       <a href="#localizacao">Localização</a>
       <a href="#faq">Dúvidas</a>
@@ -208,6 +210,28 @@
         </div>
       </div>
     </section>
+
+    <!-- GALERIA -->
+    <section class="gallery" id="galeria" aria-labelledby="galeria-title">
+      <div class="wrap">
+        <h2 id="galeria-title" class="h2 reveal">Trabalhos da nossa equipe</h2>
+        <p class="body gallery__intro reveal">Jardins, gramados e canteiros feitos pela Nature. Toque em uma foto para ampliar.</p>
+
+        <ul class="gallery__grid" role="list">
+          <li class="shot shot--main reveal"><button type="button" class="shot__btn" data-full="assets/galeria/galeria-01.jpg"><img src="assets/galeria/galeria-01-thumb.jpg" alt="Jardim tropical com palmeiras e folhagens ao redor de uma piscina" width="960" height="540" loading="lazy"></button></li>
+          <li class="shot reveal"><button type="button" class="shot__btn" data-full="assets/galeria/galeria-02.jpg"><img src="assets/galeria/galeria-02-thumb.jpg" alt="Plantio de grama em placas em uma área aberta, com o maquinário da equipe" width="960" height="540" loading="lazy"></button></li>
+          <li class="shot reveal"><button type="button" class="shot__btn" data-full="assets/galeria/galeria-03.jpg"><img src="assets/galeria/galeria-03-thumb.jpg" alt="Canteiro com casca de pinus, flores e arbusto junto ao muro" width="960" height="540" loading="lazy"></button></li>
+        </ul>
+      </div>
+    </section>
+
+    <dialog class="lightbox" aria-label="Foto ampliada">
+      <img class="lightbox__img" src="" alt="">
+      <p class="lightbox__caption"></p>
+      <button type="button" class="round lightbox__close" aria-label="Fechar"><i class="ph ph-x" aria-hidden="true"></i></button>
+      <button type="button" class="round lightbox__prev" aria-label="Foto anterior"><i class="ph ph-arrow-left" aria-hidden="true"></i></button>
+      <button type="button" class="round lightbox__next" aria-label="Próxima foto"><i class="ph ph-arrow-right" aria-hidden="true"></i></button>
+    </dialog>
 
     <!-- DEPOIMENTOS -->
     <!-- Depoimentos de exemplo: substituir por avaliações reais de clientes antes de publicar. -->
@@ -364,6 +388,7 @@
   <footer class="footer">
     <div class="wrap footer__inner">
       <div>
+        <img class="footer__logo" src="assets/logo.png" alt="Nature Paisagismo" width="110" height="110" loading="lazy">
         <span class="brand__name brand__name--light">Nature<span>Paisagismo</span></span>
         <p class="footer__small">Paisagismo, jardinagem e viveiro em Porto Alegre - RS</p>
       </div>
