@@ -42,7 +42,7 @@
       return;
     }
     if (!WHATSAPP) {
-      status.textContent = "O WhatsApp da loja ainda não foi configurado. Visite o viveiro na Rua Casemiro de Abreu, 707.";
+      status.textContent = "O WhatsApp ainda não foi configurado. Fale com a gente na Rua Casemiro de Abreu, 707.";
       status.hidden = false;
       return;
     }
